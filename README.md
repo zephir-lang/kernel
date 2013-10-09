@@ -1,84 +1,36 @@
-Zephir
-======
-Zephir - Ze(nd Engine) Ph(p) I(nt)r(mediate) - is a high level language that eases the creation and maintainability
-of extensions for PHP. Zephir extensions are exported to C code that can be compiled and optimized by major C compilers
-such as gcc/clang/vc++. Functionality is exposed to the PHP language.
+Zephir Kernel
+==============
 
-Main features:
+Zephir Kernel is a meta-framework on top of the Zend API helping to create PHP extensions in an easier way
+for a PHP developer.
 
-* Both dynamic/static typing
-* Reduced execution overhead compared with full interpretation
-* Restricted procedural programming, promoting OOP
-* Memory safety
-* Ahead-of-time compiler
+In order to build a fast and stable framework, we have created the Zephir Kernel. The use of
+this API helps us to write C code in a PHP style. We have developed a number of functions to help the
+programmer to write code more interoperable with PHP in a easier way.
 
-Compiler design goals:
+Zephir Kernel API is based on the Zend API, but we have added more features to facilitate us the work.
+Zephir is a very large project, frameworks need to be developed and improved every day, Zephir Kernel API
+helps us to write C code that is more stable and familiar to PHP developers.
 
-* Multi-pass compilation
-* Type speculation/inference
-* Allow runtime profile-guided optimizations, pseudo-constant propagation and indirect/virtual function inlining
+If you’re a PHP developer maybe you don’t know C or you don’t want to learn C, but after read this guide
+you will find the Zephir API very familiar to your knowledge.
 
-Requirements
-------------
+Zephir Kernel provides you:
 
-To compile zephir-parser:
-
-* [json-c](https://github.com/json-c/json-c) (Please install this one from Github)
-* [re2c](http://re2c.org/)
-
-To build the PHP extension:
-
-* g++ >= 4.4/clang++ >= 3.x/vc++ 9
-* gnu make 3.81 or later
-* php development headers and tools
-
-Installation
-------------
-Once you have the required packages installed, you can generate the parser as follows:
-
-```bash
-./install
-```
-
-Additional notes on Ubuntu
---------------------------
-The following packages are needed in Ubuntu:
-
-* apt-get install re2c
-
-Usage
------
-Compile the extension:
-
-```bash
-./bin/zephir compile
-```
-
-Documentation & Blog
---------------------
-* A preliminary documentation can be found [here](http://zephir-lang.com/)
-* Official Blog can be found [here](http://blog.zephir-lang.com/)
-* Sublime/TextMate highlight-syntax bundle [here](http://github.com/phalcon/zephir-sublime)
+* Manipulate arrays/objects
+* Call functions/methods in the PHP userland
+* Automatic memory management
+* Require and execute PHP plain files
+* Simplification of common operations like concatenation
+* Read superglobals and update the active symbol table
+* Register classes in namespaces
+* Throw exceptions
+* And more
 
 License
 -------
-Zephir is open-sourced software licensed under the MIT License. See the LICENSE file for more information.
+Zephir is open-sourced software licensed under the New BSD License. See the LICENSE file for more information.
 
-Donate & Sponsor
-----------------
-Zephir is available to the public without charge, under the permissive MIT License.
-Zephir is available to everyone freely on terms that allow both non-commercial and commercial activity.
-This license allows for academics, for-profit software developers, volunteers and enthusiasts alike to
-collaborate together to make a better software for everyone.
-
-Donate allowing us to invest more time and resources to the project,
-ensuring it will be ready sooner and with loads of features.
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8N7LHE5QH376N)
-
-Current Build Status
---------------------
-Zephir is built under Travis CI service. Every commit pushed to this repository will queue a build into the continuous integration service and will run all PHPUnit tests to ensure that everything is going well and the project is stable. The current build status is:
-
-[![Build Status](https://secure.travis-ci.org/phalcon/zephir.png?branch=master)](http://travis-ci.org/phalcon/zephir)
-
+Related Documentation
+---------------------
+* http://internals.phalconphp.com/en/latest/index.html
